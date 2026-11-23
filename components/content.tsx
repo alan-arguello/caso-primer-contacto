@@ -2,6 +2,21 @@ import type { ReactNode } from "react";
 
 /* Respuestas del caso. Las preguntas van tal cual las escribe Creai en el PDF. */
 
+function DemoLink({ ch }: { ch: "llamada" | "whatsapp" }) {
+  return (
+    <button
+      className="demo-link"
+      onClick={() => {
+        window.dispatchEvent(new CustomEvent("demo:open", { detail: ch }));
+        document.getElementById("demo")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }}
+    >
+      <span className="demo-link-play" aria-hidden="true" />
+      Ver el demo de esta pieza
+    </button>
+  );
+}
+
 export type QA = { id: string; num: string; q: ReactNode; short: string; body: () => ReactNode };
 
 export const SUMMARY: { k: string; lead?: string; list: string[] }[] = [
@@ -115,11 +130,13 @@ export const HIPOTESIS: QA[] = [
             <span className="route-k">Pieza 1</span>
             <strong>WhatsApp con menú</strong>
             <p>El paciente elige su trámite de un menú con los motivos más frecuentes, los pocos que concentran la mayoría de los contactos, y deja sus datos sin esperar a una operadora. Lo que no está en el menú pasa a una persona.</p>
+            <DemoLink ch="whatsapp" />
           </div>
           <div className="route-piece">
             <span className="route-k">Pieza 2</span>
             <strong>Tomador de notas en llamada y recepción</strong>
             <p>Mientras la operadora atiende, el sistema transcribe y llena el registro. Las reglas validan y ella solo confirma. El registro va directo a la HCE.</p>
+            <DemoLink ch="llamada" />
           </div>
           <dl>
             <div><dt>Ataca</dt><dd>Errores de transcripción y doble captura. El menú saca de la fila los trámites simples.</dd></div>

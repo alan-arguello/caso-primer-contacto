@@ -739,3 +739,9 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--blue); outline-
   .stepper em { display: none; }
   .tx, .chat { height: 320px; }
 }
+
+/* Botón de la pieza al demo */
+.demo-link { align-self: flex-start; margin-top: 10px; display: inline-flex; align-items: center; gap: 8px; border: 0; background: var(--blue); color: #fff; font: 500 13.5px var(--font-sans), Arial, sans-serif; padding: 7px 14px 7px 8px; border-radius: 100px; cursor: pointer; transition: transform 0.2s var(--ease), background 0.2s; }
+.demo-link:hover { transform: translateY(-1px); background: #0f4fc9; }
+.demo-link-play { position: relative; width: 20px; height: 20px; border-radius: 50%; background: #fff; }
+.demo-link-play::after { content: ""; position: absolute; left: 8px; top: 6px; border-left: 6px solid var(--blue); border-top: 4px solid transparent; border-bottom: 4px solid transparent; }

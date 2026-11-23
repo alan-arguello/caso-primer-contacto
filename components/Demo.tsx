@@ -250,6 +250,18 @@ export default function Demo() {
     else startChat();
   };
 
+  useEffect(() => {
+    const onOpen = (e: Event) => {
+      const c = (e as CustomEvent<Ch>).detail;
+      seen.current = true;
+      setCh(c);
+      if (c === "llamada") later(playCall, 500);
+      else later(startChat, 500);
+    };
+    window.addEventListener("demo:open", onOpen);
+    return () => window.removeEventListener("demo:open", onOpen);
+  }, [playCall, startChat]);
+
   const confirm = () => {
     setAwaiting(false);
     setStep(5);
