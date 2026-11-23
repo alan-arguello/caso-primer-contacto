@@ -360,7 +360,7 @@ export const MENSAJE: QA = {
       confirmar tu comprensión del reto, enunciar los objetivos principales y proponer próximos pasos.
     </>
   ),
-  short: "Un correo corto que confirma el reto, enuncia tres objetivos y propone tres pasos con fecha.",
+  short: "Un correo corto: el reto, nuestra hipótesis, tres objetivos y tres próximos pasos con fecha y responsable.",
   body: () => (
     <div className="mail">
       <div className="mail-head">
@@ -370,8 +370,8 @@ export const MENSAJE: QA = {
       <div className="mail-body">
         <div className="mail-row">
           <div>
-            <p>Hola [Nombre]:</p>
-            <p>Gracias por la reunión de hoy. Te comparto lo que entendimos para confirmar que estamos alineados.</p>
+            <p>Hola, [Nombre]:</p>
+            <p>Gracias por la reunión de hoy. Para seguir con el proceso, quiero asegurarme de que entendí bien el reto y de que estamos alineados en el objetivo.</p>
           </div>
         </div>
         <div className="mail-row">
@@ -380,18 +380,19 @@ export const MENSAJE: QA = {
             <p>
               Hoy el primer contacto depende del call-center y la recepción. El proceso es manual y genera esperas de 7 a 10
               minutos, 22% de abandono, doble captura en el 65% de los casos y errores que terminan en devoluciones de
-              aseguradoras. Más allá de la carga administrativa, creemos que el reto de fondo es que todos los pacientes
-              entran por la misma fila, sin importar lo que necesiten.
+              aseguradoras.
             </p>
+            <p className="mail-h">Nuestra hipótesis</p>
+            <p>El reto de fondo es que todos los pacientes entran por la misma fila, sin importar lo que necesiten: una cita, un trámite o una urgencia.</p>
           </div>
           <span className="mark">Confirma la comprensión del reto</span>
         </div>
         <div className="mail-row">
           <div>
-            <p className="mail-h">Objetivos</p>
+            <p className="mail-h">El objetivo</p>
             <ol>
-              <li>Capturar los datos del paciente una sola vez, por cualquier canal.</li>
-              <li>Que los trámites más comunes se resuelvan sin esperar a una operadora.</li>
+              <li>Capturar los datos del paciente una sola vez y rápido, por cualquier canal: llamada, en persona o WhatsApp.</li>
+              <li>Clasificar automáticamente cada contacto, para que un agente resuelva lo simple, como agendar una cita.</li>
               <li>Liberar a operadoras, enfermería y médicos para los casos que requieren su criterio.</li>
             </ol>
           </div>
@@ -401,17 +402,17 @@ export const MENSAJE: QA = {
           <div>
             <p className="mail-h">Próximos pasos</p>
             <ol>
-              <li>Acompañar un turno de call-center y recepción en una sede. [fecha]</li>
-              <li>Recibir de su equipo una muestra de registros y llamadas para ver los motivos de contacto más comunes. [fecha]</li>
-              <li>Presentarles el alcance de un POC y el KPI con el que mediríamos el éxito. [fecha]</li>
+              <li>Acompañar un turno de call-center y recepción en una sede. ¿Qué fecha les funciona y con quién me coordino?</li>
+              <li>Recibir una muestra de registros y llamadas para ver los motivos de contacto más comunes. ¿Qué fecha les funciona y con quién me coordino?</li>
+              <li>Presentarles el alcance del POC y el KPI con el que mediríamos el éxito. Lo comparto en cuanto tengamos los dos puntos anteriores.</li>
             </ol>
           </div>
           <span className="mark">Propone próximos pasos</span>
         </div>
         <div className="mail-row">
           <div>
-            <p>¿Refleja lo que platicamos? Si algo no cuadra, lo ajustamos.</p>
-            <p>Saludos,<br />Alan</p>
+            <p>Quedo atento a cualquier comentario.</p>
+            <p>Gracias,<br />Alan</p>
           </div>
         </div>
       </div>
