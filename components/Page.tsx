@@ -5,7 +5,7 @@ import { ALINEACION, DIAGNOSTICO, HIPOTESIS, MENSAJE, SUMMARY, type QA } from ".
 import Visual from "./Visual";
 import PnL from "./PnL";
 import Metas from "./Metas";
-import Demo from "./Demo";
+import Paciente from "./Paciente";
 
 const SECTIONS = [
   { id: "s01", num: "01", label: "Executive Summary" },
@@ -15,7 +15,6 @@ const SECTIONS = [
   { id: "s05", num: "05", label: "Comunicación" },
   { id: "s06", num: "06", label: "Propuesta visual" },
   { id: "kpi", num: "", label: "KPI" },
-  { id: "demo", num: "", label: "Demo" },
 ];
 
 function Head({ num, title }: { num: string; title: string }) {
@@ -171,8 +170,15 @@ export default function Page() {
           </Prompt>
           <div className="sub">
             <div className="sub-head">
-              <h3>Antes y después</h3>
-              <p>El mismo flujo en tres pasos: así pasa hoy, la ruta 1 y la ruta 2.</p>
+              <h3>Antes y después, desde el paciente</h3>
+              <p>Lo que vive un paciente en cada momento, hoy y con cada ruta.</p>
+            </div>
+            <Paciente />
+          </div>
+          <div className="sub">
+            <div className="sub-head">
+              <h3>Por dentro</h3>
+              <p>El mismo primer contacto visto desde la operación: así pasa hoy, la ruta 1 y la ruta 2.</p>
             </div>
             <Visual step={step} setStep={setStep} />
           </div>
@@ -197,15 +203,6 @@ export default function Page() {
             </div>
             <PnL />
           </div>
-        </section>
-
-        <section className="sec" id="demo">
-          <header className="sh">
-            <span className="sh-tag">Extra</span>
-            <h2>Demo del POC</h2>
-          </header>
-          <p className="demo-intro">Simulación con datos de ejemplo de las dos piezas del POC.</p>
-          <Demo />
         </section>
       </main>
 

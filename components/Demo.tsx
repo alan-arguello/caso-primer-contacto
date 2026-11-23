@@ -310,11 +310,11 @@ export default function Demo() {
     <div className="demo" ref={box}>
       <div className="demo-top">
         <div className="seg" role="tablist" aria-label="Canal de la demo">
-          <button role="tab" aria-selected={ch === "llamada"} onClick={() => switchTo("llamada")}>
-            Llamada <span>Pieza 2</span>
-          </button>
           <button role="tab" aria-selected={ch === "whatsapp"} onClick={() => switchTo("whatsapp")}>
-            WhatsApp <span>Pieza 1</span>
+            <span>Pieza 1</span> <b className="seg-l">WhatsApp con menú</b><b className="seg-s">WhatsApp</b>
+          </button>
+          <button role="tab" aria-selected={ch === "llamada"} onClick={() => switchTo("llamada")}>
+            <span>Pieza 2</span> <b className="seg-l">Tomador de notas</b><b className="seg-s">Llamada</b>
           </button>
         </div>
         <button className="icon-btn" onClick={() => (ch === "llamada" ? playCall() : startChat())} aria-label="Reiniciar la demo" title="Reiniciar">

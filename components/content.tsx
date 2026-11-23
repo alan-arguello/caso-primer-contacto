@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Demo from "./Demo";
 
 /* Respuestas del caso. Las preguntas van tal cual las escribe Creai en el PDF. */
 
@@ -162,6 +163,12 @@ export const HIPOTESIS: QA[] = [
             <div><dt>Exige</dt><dd>El proceso mapeado de punta a punta, los datos estandarizados que deja la ruta 1 y el aval clínico del comité. Sale gradual, del 20% al 100% del tráfico.</dd></div>
           </dl>
         </article>
+      </div>
+      <div className="demo-wrap" id="demo">
+        <p className="demo-title">
+          Demo de la ruta 1 <span>Simulación con datos de ejemplo. Elige la pieza.</span>
+        </p>
+        <Demo />
       </div>
       </>
     ),
